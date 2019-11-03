@@ -24,28 +24,28 @@ menuRows.forEach(row => {
   switch (type) {
     case 'motion':
       icon.src = "../../media/motion.svg";
-      icon.classList.add('svg');
-      row.firstChild.prepend(icon);
       break;
     case 'looks':
-      // TODO
+      icon.src = "../../media/looks.svg";
       break;
     case 'sound':
-      // TODO
+      icon.src = "../../media/sound.svg";
       break;
     case 'events':
-      // TODO
+      icon.src = "../../media/events.svg";
       break;
     case 'control':
-      // TODO
+      icon.src = "../../media/control.svg";
       break;
     case 'sensing':
-      // TODO
+      icon.src = "../../media/sensing.svg";
       break;
     case 'operators':
-      // TODO
+      icon.src = "../../media/operators.svg";
       break;
     default:
       break;
   }
+  icon.classList.add('svg');
+  row.firstChild.prepend(icon);
 });

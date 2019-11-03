@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 23 23" style="enable-background:new 0 0 23 23;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E9EEF1;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#399445;stroke-width:1.0219;stroke-miterlimit:10;}
+	.st3{fill:none;stroke:#399445;stroke-width:0.9846;stroke-miterlimit:10;}
+	.st4{fill:#399445;}
+</style>
+<g id="original">
+</g>
+<g id="overlay">
+</g>
+<g id="Layer_3">
+	<g>
+		<ellipse class="st2" cx="12" cy="11.2" rx="9.7" ry="9.9"/>
+		<line class="st2" x1="2.8" y1="11.1" x2="21.8" y2="11.1"/>
+		<line class="st2" x1="12.2" y1="1.2" x2="12.2" y2="21"/>
+		<line class="st2" x1="14.2" y1="6.9" x2="17.8" y2="6.9"/>
+		<g>
+			<line class="st3" x1="6.4" y1="7.1" x2="10" y2="7.1"/>
+			<line class="st3" x1="8.2" y1="5.4" x2="8.2" y2="8.8"/>
+		</g>
+		<g>
+			<line class="st3" x1="6.6" y1="14" x2="9.1" y2="16.5"/>
+			<line class="st3" x1="9.1" y1="14.1" x2="6.7" y2="16.5"/>
+		</g>
+		<g>
+			<line class="st2" x1="14.2" y1="15.2" x2="17.9" y2="15.2"/>
+			<circle class="st4" cx="16" cy="13.9" r="0.6"/>
+			<circle class="st4" cx="16.1" cy="16.5" r="0.6"/>
+		</g>
+	</g>
+</g>
+</svg>

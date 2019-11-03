@@ -57,7 +57,8 @@ const removeSelectedCategories = currCategory => {
   });
 }
 
-const setupSubmenus = (temp, category, firstToolbox, firstLabel, secondToolBox, secondLabel) => {
+const setupSubmenus =
+  (temp, category, firstToolbox, firstLabel, firstSvg, secondToolBox, secondLabel, secondSvg) => {
   // Create submenu elements
   for (let i = 0; i < numSubmenu; i++) {
     let subMenu = temp[temp.length - 1].cloneNode(true);
@@ -75,6 +76,7 @@ const setupSubmenus = (temp, category, firstToolbox, firstLabel, secondToolBox, 
     toggleSubmenu(firstSubmenu);
   });
   firstSubmenu.lastChild.lastChild.innerHTML = firstLabel;
+  firstSubmenu.lastChild.firstChild.src = firstSvg;
 
   // Second submenu
   const secondSubmenu = temp[2];
@@ -85,6 +87,7 @@ const setupSubmenus = (temp, category, firstToolbox, firstLabel, secondToolBox, 
     toggleSubmenu(secondSubmenu);
   });
   secondSubmenu.lastChild.lastChild.innerHTML = secondLabel;
+  secondSubmenu.lastChild.firstChild.src = secondSvg;
 
   newRows.push(temp);
 }
@@ -92,11 +95,13 @@ const setupSubmenus = (temp, category, firstToolbox, firstLabel, secondToolBox, 
 menuRows.forEach(row => {
   row = row.cloneNode(true);
   row.firstChild.classList.remove('categorySelected');
+  const bubble = row.firstChild.firstChild;
+  bubble.parentNode.removeChild(bubble);
   topMenuRows.push(row);
 
   let temp = [];
+  const icon = document.createElement('img');
   const type = row.firstChild.classList[1].split("-")[1];
-
   switch (type) {
     case 'motion':
       row.classList.add('motion');
@@ -110,8 +115,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/motion.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'motion', Blockly.Blocks.motionStaticToolbox, 'Static', Blockly.Blocks.motionMobileToolbox, 'Mobile');
+      setupSubmenus(temp, 'motion', Blockly.Blocks.motionStaticToolbox, 'Static', '../../media/motion-static.svg',
+                    Blockly.Blocks.motionMobileToolbox, 'Mobile', '../../media/motion-mobile.svg');
       break;
     case 'looks':
       row.classList.add('looks');
@@ -125,8 +135,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/looks.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'looks', Blockly.Blocks.looksGraphicsToolbox, 'Graphics', Blockly.Blocks.looksUtilityToolbox, 'Utility');
+      setupSubmenus(temp, 'looks', Blockly.Blocks.looksGraphicsToolbox, 'Graphics', '../../media/looks-graphics.svg',
+                    Blockly.Blocks.looksUtilityToolbox, 'Utility', '../../media/looks-utility.svg');
       break;
     case 'sound':
       row.classList.add('sound');
@@ -140,8 +155,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/sound.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'sound', Blockly.Blocks.soundOptionsToolbox, 'Options', Blockly.Blocks.soundVocalToolbox, 'Vocal');
+      setupSubmenus(temp, 'sound', Blockly.Blocks.soundOptionsToolbox, 'Options', '../../media/sound-options.svg',
+                    Blockly.Blocks.soundVocalToolbox, 'Vocal', '../../media/sound-vocal.svg');
       break;
     case 'events':
       row.classList.add('events');
@@ -155,8 +175,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/events.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'events', Blockly.Blocks.eventsMessageToolbox, 'Message', Blockly.Blocks.eventsChangeToolbox, 'Change');
+      setupSubmenus(temp, 'events', Blockly.Blocks.eventsMessageToolbox, 'Message', '../../media/events-message.svg',
+                    Blockly.Blocks.eventsChangeToolbox, 'Change', '../../media/events-change.svg');
       break;
     case 'control':
       row.classList.add('control');
@@ -170,8 +195,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/control.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'control', Blockly.Blocks.controlConditionalsToolbox, 'Condition', Blockly.Blocks.controlUtilityToolbox, 'Utility');
+      setupSubmenus(temp, 'control', Blockly.Blocks.controlConditionalsToolbox, 'Condition', '../../media/control-condition.svg',
+                    Blockly.Blocks.controlUtilityToolbox, 'Utility', '../../media/control-utility.svg');
       break;
     case 'sensing':
       row.classList.add('sensing');
@@ -185,8 +215,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/sensing.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'sensing', Blockly.Blocks.sensingValueToolbox, 'Value', Blockly.Blocks.sensingUtilityToolbox, 'Utility');
+      setupSubmenus(temp, 'sensing', Blockly.Blocks.sensingValueToolbox, 'Value', '../../media/sensing-value.svg',
+                    Blockly.Blocks.sensingUtilityToolbox, 'Utility', '../../media/sensing-utility.svg');
       break;
     case 'operators':
       row.classList.add('operators');
@@ -200,8 +235,13 @@ menuRows.forEach(row => {
           currSubmenuSelected = null;
         }
       })
+      icon.src = "../../media/operators.svg";
+      icon.classList.add('svg');
+      row.firstChild.prepend(icon);
+
       temp.push(row);
-      setupSubmenus(temp, 'operators', Blockly.Blocks.operatorsLogicToolbox, 'Logic', Blockly.Blocks.operatorsCalculateToolbox, 'Calculate');
+      setupSubmenus(temp, 'operators', Blockly.Blocks.operatorsLogicToolbox, 'Logic', '../../media/operators-logic.svg',
+                    Blockly.Blocks.operatorsCalculateToolbox, 'Calculate', '../../media/operators-calculate.svg');
       break;
     default:
       break;

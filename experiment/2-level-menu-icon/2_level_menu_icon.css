@@ -27,3 +27,9 @@ html, body {
 .selected {
   background: rgb(219, 110, 0);
 }
+
+.svg {
+  height: 22px;
+  width: 22px;
+  margin: 0 20px 0 20px;
+}
