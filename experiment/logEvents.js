@@ -7,7 +7,7 @@ function logEvents(workspace, VERSION, ANSWER) {
   // Track element interacted with
   var totalClicks = 0;
   var step = 1;
-  var actions = [];
+  var actionlog = [];
   var lastClickedBlock = "";
   var blocklyDiv = document.getElementById('blocklyDiv');
   blocklyDiv.addEventListener('mousedown', function(event) {
@@ -39,7 +39,7 @@ function logEvents(workspace, VERSION, ANSWER) {
     var y = event.clientY;
     var date = new Date();
     var data = [step++, element, x, y, date, event.target];
-    actions.push(data);
+    actionslog.push(data);
 
     totalClicks++;
   }, true);
