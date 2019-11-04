@@ -26,6 +26,7 @@
     <script src="../../blocks_vertical/data.js"></script>
     <script src="../../blocks_vertical/extensions.js"></script>
     <script src="../../blocks_vertical/default_toolbox.js"></script>
+    <script src="../logEvents.js"></script>
     <script>
       'use strict';
 
@@ -63,8 +64,7 @@
     </style>
   </head>
 
-  <body onload="start()">
+  <body onload="start();logEvents(workspace, 1, ['motion_movesteps'])">
     <div id="blocklyDiv"></div>
   </body>
-  <script src="../logEvents.js"></script>
 </html>
