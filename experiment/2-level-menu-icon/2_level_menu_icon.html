@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>2 level menu (Circle)</title>
+    <title>2 level menu (Icon)</title>
     <link rel="stylesheet" href="2_level_menu_icon.css">
     <script src="../../blockly_uncompressed_vertical.js"></script>
     <script src="../../msg/messages.js"></script>
@@ -25,9 +25,34 @@
     <script src="../../blocks_vertical/data.js"></script>
     <script src="../../blocks_vertical/extensions.js"></script>
     <script src="../../blocks_vertical/two_level_menu_toolbox.js"></script>
+    <script src="2_level_menu_icon.js"></script>
+    <script src="../logEvents.js"></script>
+    <script>
+        'use strict';
+  
+        var workspace = null;
+  
+        function start() {
+          // Setup blocks
+          // Parse the URL arguments.
+  
+          // Create main workspace.
+          workspace = Blockly.inject('blocklyDiv', {
+            media: '../../media/',
+            zoom: {
+              controls: true,
+              wheel: true,
+              startScale: 0.675,
+              maxScale: 4,
+              minScale: 0.25,
+              scaleSpeed: 1.1
+            },
+          });
+        }
+      </script>
+  
   </head>
-  <body>
+  <body onload="start();initialize(workspace);logEvents(workspace, 1.1, ['motion_movesteps', 'motion_setx'])">
     <div id="blocklyDiv"></div>
   </body>
-  <script src="2_level_menu_icon.js"></script>
 </html>

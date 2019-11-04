@@ -1,4 +1,6 @@
 function logEvents(workspace, VERSION, ANSWER) {
+  var DEBUG = true;
+
   function isCodeBlock(target) { return target.classList[0] == "blocklyDraggable"; }
   function isCategory(target) { return target.classList[0] == "scratchCategoryMenuItem"; }
 
@@ -68,19 +70,29 @@ function logEvents(workspace, VERSION, ANSWER) {
     function searchAnswer(idx, block) {
       if (block == null) { return false; }
     
+      DEBUG && console.log(`Type: ${block.type} comparing with ${ANSWER[idx]}`);
       if (block.type === ANSWER[idx]) {
+        DEBUG && console.log(`It is a match to ${ANSWER[idx]}.`)
         // Is end of answer
         var nextBlock = block.getNextBlock();
         if (idx+1 === ANSWER.length) {
           if (!nextBlock) {
+            DEBUG && console.log(`This is the end of the answer.`);
             //sendLogData();
             return true;
           }
-          else { return false; }
+          else {
+            DEBUG && console.log(`There is extra child block(s).`);
+            return false;
+          }
         }
   
         // Continue comparison
-        if (!nextBlock) { return false; }
+        if (!nextBlock) {
+          DEBUG && console.log(`There are no more blocks left.`);
+          return false;
+        }
+        DEBUG && console.log(`Recursively searching child block ${nextBlock.type}`);
         return searchAnswer(idx+1, nextBlock);
       }
       return false;
@@ -88,7 +100,9 @@ function logEvents(workspace, VERSION, ANSWER) {
 
     var blocks = workspace.getTopBlocks();
     for (var i = 0; i < blocks.length; i++) {
+      DEBUG && console.log(`/******** ${blocks[i]} ********/`);
       var isDone = searchAnswer(0, blocks[i]);
+      DEBUG && console.log("isDone?", isDone);
       if (isDone) { return true; }
     }
 
