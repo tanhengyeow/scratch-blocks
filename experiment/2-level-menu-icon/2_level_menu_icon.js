@@ -71,6 +71,8 @@ const setupSubmenus =
   const firstSubmenu = temp[1];
   firstSubmenu.classList.add(category, 'submenu', 'hidden');
   firstSubmenu.prepend(indicator);
+  firstSubmenu.lastChild.classList.remove(`scratchCategoryId-${category}`);
+  firstSubmenu.lastChild.classList.add(`scratchCategoryId-${firstLabel.toLowerCase()}`);
   firstSubmenu.addEventListener('click', () => {
     setToolboxMenu(firstToolbox);
     toggleSubmenu(firstSubmenu);
@@ -82,6 +84,8 @@ const setupSubmenus =
   const secondSubmenu = temp[2];
   secondSubmenu.classList.add(category, 'submenu', 'hidden');
   secondSubmenu.prepend(indicator.cloneNode(true));
+  secondSubmenu.lastChild.classList.remove(`scratchCategoryId-${category}`);
+  secondSubmenu.lastChild.classList.add(`scratchCategoryId-${secondLabel.toLowerCase()}`);
   secondSubmenu.addEventListener('click', () => {
     setToolboxMenu(secondToolBox);
     toggleSubmenu(secondSubmenu);
