@@ -1,5 +1,5 @@
 function logEvents(workspace, VERSION, ANSWER) {
-  var DEBUG = true;
+  var DEBUG = false;
 
   function isCodeBlock(target) { return target.classList[0] == "blocklyDraggable"; }
   function isCategory(target) { return target.classList[0] == "scratchCategoryMenuItem"; }
