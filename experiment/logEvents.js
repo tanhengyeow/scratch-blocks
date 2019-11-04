@@ -4,6 +4,8 @@ function logEvents(workspace, VERSION, ANSWER) {
   function isCodeBlock(target) { return target.classList[0] == "blocklyDraggable"; }
   function isCategory(target) { return target.classList[0] == "scratchCategoryMenuItem"; }
 
+  var startTime = new Date();
+
   // Track element interacted with
   var totalClicks = 0;
   var step = 1;
@@ -39,7 +41,7 @@ function logEvents(workspace, VERSION, ANSWER) {
     var y = event.clientY;
     var date = new Date();
     var data = [step++, element, x, y, date, event.target];
-    actionslog.push(data);
+    actionlog.push(data);
 
     totalClicks++;
   }, true);
@@ -78,7 +80,7 @@ function logEvents(workspace, VERSION, ANSWER) {
         if (idx+1 === ANSWER.length) {
           if (!nextBlock) {
             DEBUG && console.log(`This is the end of the answer.`);
-            //sendLogData();
+            sendLogData();
             return true;
           }
           else {
@@ -107,5 +109,13 @@ function logEvents(workspace, VERSION, ANSWER) {
     }
 
     return false;
+  }
+
+  function sendLogData() {
+    // Calculate time taken to complete task
+    var endTime = new Date();
+    let timeDiff = endTime - startTime; // in ms
+    timeDiff /= 1000;                   // in sec
+    console.log(timeDiff);
   }
 }
