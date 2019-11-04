@@ -72,7 +72,8 @@ function logEvents(workspace, VERSION, ANSWER) {
   // Check if task is completed, i.e. code block has been replicated
   function isTaskComplete() {
     function isCode(obj) {
-      return obj.type.split('_')[0] in categories;
+      console.log(obj ? obj.type.split('_')[0] : "");
+      return obj && obj.type.split('_')[0] in categories;
     }
 
     function searchAnswer(idx, block) {
@@ -90,12 +91,15 @@ function logEvents(workspace, VERSION, ANSWER) {
             console.log("it has no children");
             return true; 
           }
-          for (var i = 0; block.childBlocks_.length; i++) {
+
+          for (var i = 0; i < block.childBlocks_.length; i++) {
+            console.log("ISCODEE", block.childBlocks_[i], isCode(block.childBlocks_[i]));
             if (isCode(block.childBlocks_[i])) {
               console.log("it is not the last block");
               return false;
             }
           }
+          return true;
         }
   
         // Continue comparison
@@ -128,9 +132,13 @@ function logEvents(workspace, VERSION, ANSWER) {
       'operators': 'operators',
     };
 
+    console.log("ALL BLOCKS", blocks);
     for (var i = 0; i < blocks.length; i++) {
-      if (isCode(blocks[i]) && blocks[i].parent == null) {
+      console.log("checking block", blocks[i], blocks[i].parentBlock_);
+      if (isCode(blocks[i]) && !blocks[i].parentBlock_) {
+        console.log('/***************************/')
         var isDone = searchAnswer(0, blocks[i]);
+        console.log("IS DONEEEEE!", isDone);
         if (isDone) { return true; }
       }
     }
