@@ -1,0 +1,33 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#blocklyDiv {
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.submenu {
+  position: relative;
+}
+
+.indicator {
+  width: 3px;
+  height: 100%;
+  background: #e9eef2;
+  border: 1px solid grey;
+  position: absolute;
+}
+
+.selected {
+  background: rgb(219, 110, 0);
+}
+
+.invisible {
+  visibility: hidden;
+}
