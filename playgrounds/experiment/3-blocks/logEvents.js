@@ -132,6 +132,9 @@ function logEvents(workspace, VERSION, ANSWER) {
     
     if (!isCompleted) {
       sendNetworkLog(UID, OS, BROWSER, VERSION, startTime, endTime, timeTaken, totalClicks, actionLog);
+      setTimeout(function() {
+        document.getElementById('finishScreen').classList.add('show');
+      }, 1000)
       isCompleted = true;
     }
   }
