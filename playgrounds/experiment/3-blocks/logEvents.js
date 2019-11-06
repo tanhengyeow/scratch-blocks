@@ -4,7 +4,9 @@ function logEvents(workspace, VERSION, ANSWER) {
   function isCodeBlock(target) { return target.classList[0] == "blocklyDraggable"; }
   function isCategory(target) { return target.classList[0] == "scratchCategoryMenuItem"; }
 
-  var uid = getUniqueId(); // A persistent unique id for the user.
+  var UID = getUniqueId(); // A persistent unique id for the user.
+  var OS = getOS();
+  var BROWSER = getBrowser();
   var startTime = new Date();
   var isCompleted = false;
 
@@ -41,6 +43,10 @@ function logEvents(workspace, VERSION, ANSWER) {
     }
     else {
       element = target.classList[1];
+    }
+    // Replace element with name if is unique identifier
+    if (element in blocksID) {
+      element = blocksID[element];
     }
     var x = event.clientX;
     var y = event.clientY;
@@ -125,7 +131,7 @@ function logEvents(workspace, VERSION, ANSWER) {
     timeTaken /= 1000;                   // in sec
     
     if (!isCompleted) {
-      sendNetworkLog(uid, VERSION, startTime, endTime, timeTaken, totalClicks, actionLog);
+      sendNetworkLog(UID, OS, BROWSER, VERSION, startTime, endTime, timeTaken, totalClicks, actionLog);
       isCompleted = true;
     }
   }
@@ -158,11 +164,25 @@ function logEvents(workspace, VERSION, ANSWER) {
     return localStorage['uid'];
   }
 
+  function getOS() {
+    return findFirstString(navigator.userAgent, [
+      'Android', 'iOS', 'Symbian', 'Blackberry', 'Windows Phone', 'Windows',
+      'OS X', 'Linux', 'iOS', 'CrOS']).replace(/ /g, '_');
+  }
+
+  function getBrowser() {
+    return findFirstString(navigator.userAgent, [
+      'Seamonkey', 'Firefox', 'Chromium', 'Chrome', 'Safari', 'OPR', 'Opera',
+      'Edge', 'MSIE', 'Blink', 'Webkit', 'Gecko', 'Trident', 'Mozilla']);
+  }
+
   // LoggingJS Test Form submission function
   // submits to the google form at this URL:
   // docs.google.com/forms/d/e/1FAIpQLScVYJZ9iRhfgRKYL4V8KSCWsNdspW1-8h9aWwhui1b1-IqyZA/viewform
   function sendNetworkLog(
     uid,
+    os,
+    browser,
     version,
     starttime,
     endtime,
@@ -172,6 +192,8 @@ function logEvents(workspace, VERSION, ANSWER) {
   var formid = "e/1FAIpQLScVYJZ9iRhfgRKYL4V8KSCWsNdspW1-8h9aWwhui1b1-IqyZA";
   var data = {
     "entry.1044592894": uid,
+    "entry.238617146": os,
+    "entry.731357939": browser,
     "entry.1421495277": version,
     "entry.931979032": starttime,
     "entry.1439011117": endtime,

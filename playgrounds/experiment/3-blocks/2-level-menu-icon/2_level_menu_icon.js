@@ -109,13 +109,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/motion.svg";
+        icon.src = "../../../media/motion.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'motion', Blockly.Blocks.motionStaticToolbox, 'Static', '../../media/motion-static.svg',
-                      Blockly.Blocks.motionMobileToolbox, 'Mobile', '../../media/motion-mobile.svg');
+        setupSubmenus(temp, 'motion', Blockly.Blocks.motionStaticToolbox, 'Static', '../../../media/motion-static.svg',
+                      Blockly.Blocks.motionMobileToolbox, 'Mobile', '../../../media/motion-mobile.svg');
         break;
       case 'looks':
         row.classList.add('looks');
@@ -129,13 +129,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/looks.svg";
+        icon.src = "../../../media/looks.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'looks', Blockly.Blocks.looksGraphicsToolbox, 'Graphics', '../../media/looks-graphics.svg',
-                      Blockly.Blocks.looksUtilityToolbox, 'Utility', '../../media/looks-utility.svg');
+        setupSubmenus(temp, 'looks', Blockly.Blocks.looksGraphicsToolbox, 'Graphics', '../../../media/looks-graphics.svg',
+                      Blockly.Blocks.looksUtilityToolbox, 'Utility', '../../../media/looks-utility.svg');
         break;
       case 'sound':
         row.classList.add('sound');
@@ -149,13 +149,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/sound.svg";
+        icon.src = "../../../media/sound.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'sound', Blockly.Blocks.soundOptionsToolbox, 'Options', '../../media/sound-options.svg',
-                      Blockly.Blocks.soundVocalToolbox, 'Vocal', '../../media/sound-vocal.svg');
+        setupSubmenus(temp, 'sound', Blockly.Blocks.soundOptionsToolbox, 'Options', '../../../media/sound-options.svg',
+                      Blockly.Blocks.soundVocalToolbox, 'Vocal', '../../../media/sound-vocal.svg');
         break;
       case 'events':
         row.classList.add('events');
@@ -169,13 +169,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/events.svg";
+        icon.src = "../../../media/events.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'events', Blockly.Blocks.eventsMessageToolbox, 'Message', '../../media/events-message.svg',
-                      Blockly.Blocks.eventsChangeToolbox, 'Change', '../../media/events-change.svg');
+        setupSubmenus(temp, 'events', Blockly.Blocks.eventsMessageToolbox, 'Message', '../../../media/events-message.svg',
+                      Blockly.Blocks.eventsChangeToolbox, 'Change', '../../../media/events-change.svg');
         break;
       case 'control':
         row.classList.add('control');
@@ -189,13 +189,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/control.svg";
+        icon.src = "../../../media/control.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'control', Blockly.Blocks.controlConditionalsToolbox, 'Condition', '../../media/control-condition.svg',
-                      Blockly.Blocks.controlUtilityToolbox, 'Utility', '../../media/control-utility.svg');
+        setupSubmenus(temp, 'control', Blockly.Blocks.controlConditionalsToolbox, 'Condition', '../../../media/control-condition.svg',
+                      Blockly.Blocks.controlUtilityToolbox, 'Utility', '../../../media/control-utility.svg');
         break;
       case 'sensing':
         row.classList.add('sensing');
@@ -209,13 +209,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/sensing.svg";
+        icon.src = "../../../media/sensing.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'sensing', Blockly.Blocks.sensingValueToolbox, 'Value', '../../media/sensing-value.svg',
-                      Blockly.Blocks.sensingUtilityToolbox, 'Utility', '../../media/sensing-utility.svg');
+        setupSubmenus(temp, 'sensing', Blockly.Blocks.sensingValueToolbox, 'Value', '../../../media/sensing-value.svg',
+                      Blockly.Blocks.sensingUtilityToolbox, 'Utility', '../../../media/sensing-utility.svg');
         break;
       case 'operators':
         row.classList.add('operators');
@@ -229,13 +229,13 @@ function initialize() {
             currSubmenuSelected = null;
           }
         })
-        icon.src = "../../media/operators.svg";
+        icon.src = "../../../media/operators.svg";
         icon.classList.add('svg');
         row.firstChild.prepend(icon);
 
         temp.push(row);
-        setupSubmenus(temp, 'operators', Blockly.Blocks.operatorsLogicToolbox, 'Logic', '../../media/operators-logic.svg',
-                      Blockly.Blocks.operatorsCalculateToolbox, 'Calculate', '../../media/operators-calculate.svg');
+        setupSubmenus(temp, 'operators', Blockly.Blocks.operatorsLogicToolbox, 'Logic', '../../../media/operators-logic.svg',
+                      Blockly.Blocks.operatorsCalculateToolbox, 'Calculate', '../../../media/operators-calculate.svg');
         break;
       default:
         break;

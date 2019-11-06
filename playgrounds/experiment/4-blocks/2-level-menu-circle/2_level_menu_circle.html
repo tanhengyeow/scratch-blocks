@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>2 level menu (Circle)</title>
+    <link rel="stylesheet" href="2_level_menu_circle.css">
+    <script src="../../../blockly_compressed_vertical.js"></script>
+    <script src="../../../msg/messages.js"></script>
+    <script src="../../../msg/scratch_msgs.js"></script>
+    <script src="../../../blocks_vertical/vertical_extensions.js"></script>
+    <script src="../../../blocks_common/math.js"></script>
+    <script src="../../../blocks_common/matrix.js"></script>
+    <script src="../../../blocks_common/note.js"></script>
+    <script src="../../../blocks_common/text.js"></script>
+    <script src="../../../blocks_common/colour.js"></script>
+    <script src="../../../blocks_vertical/control.js"></script>
+    <script src="../../../blocks_vertical/event.js"></script>
+    <script src="../../../blocks_vertical/motion.js"></script>
+    <script src="../../../blocks_vertical/looks.js"></script>
+    <script src="../../../blocks_vertical/procedures.js"></script>
+    <script src="../../../blocks_vertical/operators.js"></script>
+    <script src="../../../blocks_vertical/sound.js"></script>
+    <script src="../../../blocks_vertical/sensing.js"></script>
+    <script src="../../../blocks_vertical/data.js"></script>
+    <script src="../../../blocks_vertical/extensions.js"></script>
+    <script src="../../../blocks_vertical/two_level_menu_toolbox.js"></script>
+    <script src="2_level_menu_circle.js"></script>
+    <script src="../logEvents.js"></script>
+    <script>
+      'use strict';
+
+      var workspace = null;
+
+      function start() {
+        // Setup blocks
+        // Parse the URL arguments.
+
+        // Create main workspace.
+        workspace = Blockly.inject('blocklyDiv', {
+          media: '../../../media/',
+          zoom: {
+            controls: true,
+            wheel: true,
+            startScale: 0.675,
+            maxScale: 4,
+            minScale: 0.25,
+            scaleSpeed: 1.1
+          },
+        });
+      }
+    </script>
+
+  </head>
+  <body onload="start();initialize(workspace);logEvents(workspace, '2.0', ['sensing_resettimer', 'motion_movesteps', 'sound_changeeffectby', 'looks_show'])">
+    <div id="blocklyDiv"></div>
+  </body>
+</html>

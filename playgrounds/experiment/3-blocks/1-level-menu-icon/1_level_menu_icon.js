@@ -13,25 +13,25 @@ function initialize(workspace) {
     const type = row.firstChild.classList[1].split("-")[1];
     switch (type) {
       case 'motion':
-        icon.src = "../../media/motion.svg";
+        icon.src = "../../../media/motion.svg";
         break;
       case 'looks':
-        icon.src = "../../media/looks.svg";
+        icon.src = "../../../media/looks.svg";
         break;
       case 'sound':
-        icon.src = "../../media/sound.svg";
+        icon.src = "../../../media/sound.svg";
         break;
       case 'events':
-        icon.src = "../../media/events.svg";
+        icon.src = "../../../media/events.svg";
         break;
       case 'control':
-        icon.src = "../../media/control.svg";
+        icon.src = "../../../media/control.svg";
         break;
       case 'sensing':
-        icon.src = "../../media/sensing.svg";
+        icon.src = "../../../media/sensing.svg";
         break;
       case 'operators':
-        icon.src = "../../media/operators.svg";
+        icon.src = "../../../media/operators.svg";
         break;
       default:
         break;
