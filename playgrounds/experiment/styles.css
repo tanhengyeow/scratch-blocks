@@ -36,3 +36,8 @@
 .show {
     display: inline-block !important;
 }
+
+.passcode {
+    color: #ed1c24;
+    font-weight: bold;
+}
